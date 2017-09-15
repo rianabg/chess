@@ -9,6 +9,6 @@ module.exports = new WebpackConfig().extend('./webpack.config.common.babel.js').
   debug: true,
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    bundle: path.join(__dirname,'/app/script.js')
+    bundle: path.join(__dirname,'/app/src/script.js')
   }
 });

@@ -3,7 +3,7 @@ import path from 'path';
 import WebpackConfig from 'webpack-config';
 
 module.exports = new WebpackConfig().extend('./webpack.config.common.babel.js').merge({
-  entry : path.join(__dirname,'/app/script.js'),
+  entry : path.join(__dirname,'/app/src/npmscript.js'),
   plugins: [
     // new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.optimize.OccurrenceOrderPlugin(true),
