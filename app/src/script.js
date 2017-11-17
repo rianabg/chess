@@ -23,6 +23,7 @@ function handleClick(event) {
 	if (clickedPiece) {
 		const targets = clickedPiece.getTargets();
 		removeHighlights();
+		console.log('brochacho');
 		highlightTargets(targets);
 		$('.highlight').click(newSpot);
 		// don't know where to do this outside of this handleClick function
