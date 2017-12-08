@@ -32,6 +32,7 @@ function handleClick(event) {
 		clickedPiece.col = newSpot.col;
 		// move piece in array to correct position
 		// find spot in board state the holds this piece, switch it with clicked spot in board state
+		BoardState.state[clickedPiece.row][clickedPiece.col] = clickedPiece;
 	}
 }
 

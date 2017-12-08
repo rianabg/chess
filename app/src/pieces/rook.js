@@ -11,7 +11,6 @@ export default class Rook extends Piece {
 
 	getTargets() {
 		const targets = [];
-		// north for loop
 
 		for (let k = this.row - 1; k > -1; k--) {
 			if (!BoardState.state[k][this.col]) {
