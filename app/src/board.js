@@ -35,7 +35,7 @@ class Board {
 				null,
 				null,
 				// null,
-				new Knight(3, 4, 'black'),
+				new Pawn(3, 4, 'black'),
 				null,
 				null,
 				null
