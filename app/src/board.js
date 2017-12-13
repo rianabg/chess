@@ -29,30 +29,18 @@ class Board {
 				new Pawn(1, 7, 'black')
 			],
 			new Array(8),
-			// new Array(8),			
-			[
-				null,
-				null,
-				null,
-				null,
-				// null,
-				new Pawn(3, 4, 'black'),
-				null,
-				null,
-				null
-			],
 			// new Array(8),
 			[
 				null,
 				null,
 				null,
 				null,
+				new King(3, 4, 'black'),
 				null,
-				new Pawn(3, 5, 'white'),
-				// null,
 				null,
 				null
 			],
+			new Array(8),
 			new Array(8),
 			[
 				new Pawn(6, 0, 'white'),

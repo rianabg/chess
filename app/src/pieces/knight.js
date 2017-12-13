@@ -10,36 +10,52 @@ export default class Knight extends Piece {
 // this needs to be finished
 	getTargets() {
 		const targets = [];
-		let piece = BoardState.state;
-		if (!piece[this.row - 2][this.col + 1] || piece[this.row - 2][this.col + 1].color !== this.color) {
+		const piece = BoardState.state;
+		if (!piece[this.row - 2][this.col + 1]) {
 			targets.push(`${this.row - 2}${this.col + 1}`);
-		} 
-		
-		if (!piece[this.row - 2][this.col - 1] || piece[this.row - 2][this.col - 1].color !== this.color) {
+		} else if (piece[this.row - 2][this.col + 1].color !== this.color) {
+			targets.push(`${this.row - 2}${this.col + 1}`);
+		}
+
+		if (!piece[this.row - 2][this.col - 1]) {
 			targets.push(`${this.row - 2}${this.col - 1}`);
-		} 
-		
-		if (!piece[this.row + 1][this.col + 2] || piece[this.row + 1][this.col + 2].color !== this.color) {
+		} else if (piece[this.row - 2][this.col - 1].color !== this.color) {
+			targets.push(`${this.row - 2}${this.col - 1}`);
+		}
+
+		if (!piece[this.row + 1][this.col + 2]) {
 			targets.push(`${this.row + 1}${this.col + 2}`);
-		} 
-		
-		if (!piece[this.row - 1][this.col + 2] || piece[this.row - 1][this.col + 2].color !== this.color) {
+		} else if (piece[this.row + 1][this.col + 2].color !== this.color) {
+			targets.push(`${this.row + 1}${this.col + 2}`);
+		}
+
+		if (!piece[this.row - 1][this.col + 2]) {
 			targets.push(`${this.row - 1}${this.col + 2}`);
-		} 
-		
-		if (!piece[this.row + 2][this.col - 1] || piece[this.row + 2][this.col - 1].color !== this.color) {
+		} else if (piece[this.row - 1][this.col + 2].color !== this.color) {
+			targets.push(`${this.row - 1}${this.col + 2}`);
+		}
+
+		if (!piece[this.row + 2][this.col - 1]) {
 			targets.push(`${this.row + 2}${this.col - 1}`);
-		} 
-		
-		if (!piece[this.row + 2][this.col + 1] || piece[this.row + 2][this.col + 1].color !== this.color) {
+		} else if (piece[this.row + 2][this.col - 1].color !== this.color) {
+			targets.push(`${this.row + 2}${this.col - 1}`);
+		}
+
+		if (!piece[this.row + 2][this.col + 1]) {
 			targets.push(`${this.row + 2}${this.col + 1}`);
-		} 
-		
-		if (!piece[this.row - 1][this.col - 2] || piece[this.row - 1][this.col - 2].color !== this.color) {
+		} else if (piece[this.row + 2][this.col + 1].color !== this.color) {
+			targets.push(`${this.row + 2}${this.col + 1}`);
+		}
+
+		if (!piece[this.row - 1][this.col - 2]) {
 			targets.push(`${this.row - 1}${this.col - 2}`);
-		} 
-		
-		if (!piece[this.row + 1][this.col - 2] || piece[this.row + 1][this.col - 2].color !== this.color) {
+		} else if (piece[this.row - 1][this.col - 2].color !== this.color) {
+			targets.push(`${this.row - 1}${this.col - 2}`);
+		}
+
+		if (!piece[this.row + 1][this.col - 2]) {
+			targets.push(`${this.row + 1}${this.col - 2}`);
+		} else if (piece[this.row + 1][this.col - 2].color !== this.color) {
 			targets.push(`${this.row + 1}${this.col - 2}`);
 		}
 
