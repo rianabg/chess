@@ -38,21 +38,29 @@ export default class Pawn extends Piece {
 
 		// if enemy is in a diagonal square, highlight (accounts for 2 adjacent diagonals and color)
 		// why tf u not workin tho
-		if (board[this.row + 1][this.col - 1].color !== this.color) {
-			console.log(board[this.row + 1][this.col + 1]);
-			targets.push(`${this.row + 1}${this.col - 1}`);
+		// check if piece in adjacent diagonal spaces then checks if enemy
+		if (board[this.row + 1][this.col - 1]) {
+			if (board[this.row + 1][this.col - 1].color !== this.color) {
+				targets.push(`${this.row + 1}${this.col - 1}`);
+			}
 		}
 
-		if (board[this.row + 1][this.col + 1].color !== this.color) {
-			targets.push(`${this.row + 1}${this.col + 1}`);
+		if (board[this.row + 1][this.col + 1]) {
+			if (board[this.row + 1][this.col + 1].color !== this.color) {
+				targets.push(`${this.row + 1}${this.col + 1}`);
+			}
 		}
 
-		if (board[this.row - 1][this.col - 1].color !== this.color) {
-			targets.push(`${this.row - 1}${this.col - 1}`);
+		if (board[this.row - 1][this.col - 1]) {
+			if (board[this.row - 1][this.col - 1].color !== this.color) {
+				targets.push(`${this.row - 1}${this.col - 1}`);
+			}
 		}
 
-		if (board[this.row - 1][this.col + 1].color !== this.color) {
-			targets.push(`${this.row - 1}${this.col + 1}`);
+		if (board[this.row - 1][this.col + 1]) {
+			if (board[this.row - 1][this.col + 1].color !== this.color) {
+				targets.push(`${this.row - 1}${this.col + 1}`);
+			}
 		}
 
 		return targets;
