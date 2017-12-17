@@ -21,17 +21,20 @@ function handleClick(event) {
 	const coordinates = getCoordinates(event);
 	const clickedPiece = BoardState.state[coordinates.row][coordinates.col];
 	if (clickedPiece) {
+		const piece = clickedPiece;
 		const targets = clickedPiece.getTargets();
 		removeHighlights();
-		console.log('brochacho');
 		highlightTargets(targets);
-		$('.highlight').click(newSpot);
-		// don't know where to do this outside of this handleClick function
+		const NEW_SPOT = $('.highlight').click(newSpot);
+		// clear BoardState at clicked piece's OG spot
+		BoardState.state[coordinates.row][coordinates.col] = '';
 		// changes coordinates of clicked piece to new spot coordinates
+		console.log(NEW_SPOT.row);
 		clickedPiece.row = newSpot.row;
 		clickedPiece.col = newSpot.col;
-		// move piece in array to correct position
+		// moves piece in boardstate to correct position
 		// find spot in board state the holds this piece, switch it with clicked spot in board state
+		console.log(clickedPiece.row);
 		BoardState.state[clickedPiece.row][clickedPiece.col] = clickedPiece;
 	}
 }
