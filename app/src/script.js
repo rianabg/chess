@@ -21,21 +21,15 @@ function handleClick(event) {
 	const coordinates = getCoordinates(event);
 	const clickedPiece = BoardState.state[coordinates.row][coordinates.col];
 	if (clickedPiece) {
-		const piece = clickedPiece;
 		const targets = clickedPiece.getTargets();
 		removeHighlights();
 		highlightTargets(targets);
 		const NEW_SPOT = $('.highlight').click(newSpot);
 		// clear BoardState at clicked piece's OG spot
-		BoardState.state[coordinates.row][coordinates.col] = '';
 		// changes coordinates of clicked piece to new spot coordinates
-		console.log(NEW_SPOT.row);
-		clickedPiece.row = newSpot.row;
-		clickedPiece.col = newSpot.col;
+		console.log(NEW_SPOT);
 		// moves piece in boardstate to correct position
 		// find spot in board state the holds this piece, switch it with clicked spot in board state
-		console.log(clickedPiece.row);
-		BoardState.state[clickedPiece.row][clickedPiece.col] = clickedPiece;
 	}
 }
 
@@ -67,7 +61,7 @@ function newSpot(event) {
 
 function getCoordinates(event) {
 	const id = event.currentTarget.id;
-	// return object with all the things
+	// return object with row and col of clicked piece
 	return {
 		row: id[0],
 		col: id[1]
